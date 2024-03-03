@@ -18,5 +18,7 @@ jobs:
       output1: ${{ steps.step1.outputs.firstword }}
     steps:
       - id: step1
-        run: echo "firstword=${{ inputs.message }}" >> $GITHUB_OUTPUT
+        env:
+          MESSAGE: ${{ inputs.message }}
+        run: echo "firstword=$MESSAGE" >> $GITHUB_OUTPUT
       
