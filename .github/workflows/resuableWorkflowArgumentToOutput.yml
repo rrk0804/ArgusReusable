@@ -9,14 +9,12 @@ on:
     outputs:
       firstword:
         description: "The first output string"
-        value: ${{ jobs.example_job.outputs.output1 }}
+        value: ${{ inputs.message }}
 
 jobs:
   example_job:
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ steps.step1.outputs.firstword }}
     steps:
       - id: step1
-        run: echo "firstword=${{ github.event.inputs.message }}" >> $GITHUB_OUTPUT
+        run: echo "firstword=hello!"
       
