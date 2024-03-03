@@ -9,7 +9,7 @@ on:
     outputs:
       firstword:
         description: "The first output string"
-        value: ${{ jobs.example_job.outputs.output1 }}
+        value: ${{ inputs.message }}
 
 jobs:
   example_job:
