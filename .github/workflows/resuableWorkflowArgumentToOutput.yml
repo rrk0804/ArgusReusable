@@ -15,9 +15,8 @@ jobs:
   example_job:
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ inputs.message }}
+      output1: ${{ steps.step1.outputs.firstword }}
     steps:
       - id: step1
-        #run: echo "firstword=${{ inputs.message }}" >> $GITHUB_OUTPUT
-        run: echo "Nothing to see here"
+        run: echo "firstword=${{ inputs.message }}" >> $GITHUB_OUTPUT
       
