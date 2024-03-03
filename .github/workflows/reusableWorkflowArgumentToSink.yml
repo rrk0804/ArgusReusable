@@ -12,4 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print message
-      run: echo "The argument passed into the workflow is ${{ inputs.message }}" 
+      env: 
+        MESSAGE: ${{ inputs.message }}
+      run: echo "The argument passed into the workflow is $MESSAGE" 
