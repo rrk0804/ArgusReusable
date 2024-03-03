@@ -1,0 +1,23 @@
+name: Reusable workflow example
+
+on:
+  workflow_call:
+    inputs:
+      message:
+        required: true
+        type: string
+    outputs:
+      firstword:
+        description: "The first output string"
+        value: ${{ jobs.example_job.outputs.output1 }}
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ inputs.message }}
+    steps:
+      - id: step1
+        #run: echo "firstword=${{ inputs.message }}" >> $GITHUB_OUTPUT
+        run: echo "Nothing to see here"
+      
